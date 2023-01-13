@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BikeStore</title>
+    <link rel="icon" href="./assets/img/logo bike.png">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/index-responsive.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <div class="menu-toggle"><button class="btn btn-outline-secondary btn-lg "><i class="bi bi-three-dots-vertical"></i></button></div>
+        <div class="logo">
+            <h3>Bike</h3>
+            <img src="./assets/img/logo bike.png" alt="logo bike">
+            <h3>Store</h3>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#hero"><i class="bi bi-house-door btn btn-dark btn-lg nav-icon"></i>Inicio</a></li>
+                <li><a href="#product"><i class="bi bi-shop btn btn-dark btn-lg nav-icon"></i>Productos</a></li>
+                <li><a href="#about-us"><i class="bi bi-info btn btn-dark btn-lg nav-icon"></i>Sobre Nosotros</a></li>
+                <li><a href="#contact"><i class="bi bi-telephone btn btn-dark btn-lg nav-icon"></i>Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="cart-icon"><i class="bi bi-cart-check btn btn-dark btn-lg nav-icon "></i>Carrito<small class="cart-numb">3</small></button>
+        <div class="login">
+            <img class="avatar-img" src="./assets/img/avatar.png" alt="avatar">
+            <p class="avatar-name">Cosme Fulanito</p>
+            <i class="bi bi-person-circle login"></i>
+        </div>
+    </header>
+    <section id="hero">
+        <div class="hero_container">
+            <div class="hero_carrousel">
+                <img src="./assets/img/img hero/hero1.jfif" alt="img Hero">
+                <img src="./assets/img/img hero/hero2.jfif" alt="img Hero">
+                <img src="./assets/img/img hero/hero3.jfif" alt="img Hero">
+                <img src="./assets/img/img hero/hero4.jfif" alt="img Hero">
+                <img src="./assets/img/img hero/hero5.jfif" alt="img Hero">
+                <img src="./assets/img/img hero/hero6.jfif" alt="img Hero">
+                <img src="./assets/img/img hero/hero7.jfif" alt="img Hero">
+                <img src="./assets/img/img hero/hero8.jfif" alt="img Hero">
+            </div>
+        </div>
+    </section>
+    <section id="product">
+        <h1>Nuestros Productos</h1>
+        <form class="search-products ">
+            <input type="text" id="search-products_name" placeholder="Buscar" >
+            <label class="filter_check" for="filter" class="mb-3">Filtrar</label>
+            <input type="checkbox" name="filter" id="filter">
+            <div class="search-products_filter">
+                <select id="earch-products_tipo">
+                    <option value="paseo">Paseo</option>
+                    <option value="mtb">Montaña</option>
+                    <option value="pista">Pista</option>
+                    <option value="carrera">Carrera</option>
+                </select>
+                <select id="earch-products_rodado">
+                    <option value="R29">Rodado 29</option>
+                    <option value="R28">Rodado 28</option>
+                    <option value="R27.5">Rodado 27,5</option>
+                    <option value="R26">Rodado 26</option>
+                </select>
+                <select id="earch-products_cuadro">
+                    <option value="aluminio">Aluminio</option>
+                    <option value="acero">Acero</option>
+                    <option value="carbono">Carbono</option>
+                </select>
+            </div>
+            <button class="search-products_submit" type="submit"><i class="bi bi-search"></i></button>
+        
+        </form>
+        <div class="poduct_container">
+            <div class="product_card">
+                <div class="product_card_info">
+                    <img src="./assets/img/productos/raleight 700c.png" alt="img producto">
+                    <h2 class="product_card_name">Bicicleta Raleigh 700C Classic Nexus</h2>
+                    <input class="btn btn-outline-secondary product_card_mas" type="button" value="Más">
+                    <h2 class="product_card_price">$115000</h2>
+                    <button class="btn btn-outline-dark ">Agregar al carrito</button>
+                </div>
+            
+                <div class="product_card_description">
+                    <button type="button" class="btn-close align-self-end close-card-info" disabled aria-label="Close"></button>
+                    <h3>Rodado:<span>28</span></h3>
+                    <h3>Cuadro:<span>Aluminio</span></h3>
+                    <h3>Frenos:<span>Mecanico V-brake</span></h3>
+                    <h3>Velocidades:<span>3</span></h3>
+                    <h3>Color:<span>Negro</span></h3>
+                    <h3>Descripcion:</h3>
+                    <p>Bicicleta de paseo estilo vintage, liviana de aluminio con componentes modernos, al tener ruedas finas se
+                        combierte en una bicicleta ideal para paseos urbanos.</p>
+                </div>
+            </div>
+            <div class="product_card">
+                <div class="product_card_info">
+                    <img src="./assets/img/productos/raleight 700c.png" alt="img producto">
+                    <h2 class="product_card_name">Bicicleta Raleigh 700C Classic Nexus</h2>
+                    <input class="btn btn-outline-secondary product_card_mas" type="button" value="Más">
+                    <h2 class="product_card_price">$115000</h2>
+                    <button class="btn btn-outline-dark ">Agregar al carrito</button>
+                </div>
+            
+                <div class="product_card_description">
+                    <button type="button" class="btn-close align-self-end close-card-info" disabled aria-label="Close"></button>
+                    <h3>Rodado:<span>28</span></h3>
+                    <h3>Cuadro:<span>Aluminio</span></h3>
+                    <h3>Frenos:<span>Mecanico V-brake</span></h3>
+                    <h3>Velocidades:<span>3</span></h3>
+                    <h3>Color:<span>Negro</span></h3>
+                    <h3>Descripcion:</h3>
+                    <p>Bicicleta de paseo estilo vintage, liviana de aluminio con componentes modernos, al tener ruedas finas se
+                        combierte en una bicicleta ideal para paseos urbanos.</p>
+                </div>
+            </div>
+            <div class="product_card">
+                <div class="product_card_info">
+                    <img src="./assets/img/productos/raleight 700c.png" alt="img producto">
+                    <h2 class="product_card_name">Bicicleta Raleigh 700C Classic Nexus</h2>
+                    <input class="btn btn-outline-secondary product_card_mas" type="button" value="Más">
+                    <h2 class="product_card_price">$115000</h2>
+                    <button class="btn btn-outline-dark ">Agregar al carrito</button>
+                </div>
+            
+                <div class="product_card_description">
+                    <button type="button" class="btn-close align-self-end close-card-info" disabled aria-label="Close"></button>
+                    <h3>Rodado:<span>28</span></h3>
+                    <h3>Cuadro:<span>Aluminio</span></h3>
+                    <h3>Frenos:<span>Mecanico V-brake</span></h3>
+                    <h3>Velocidades:<span>3</span></h3>
+                    <h3>Color:<span>Negro</span></h3>
+                    <h3>Descripcion:</h3>
+                    <p>Bicicleta de paseo estilo vintage, liviana de aluminio con componentes modernos, al tener ruedas finas se
+                        combierte en una bicicleta ideal para paseos urbanos.</p>
+                </div>
+            </div>
+            <div class="product_card">
+                <div class="product_card_info">
+                    <img src="./assets/img/productos/raleight 700c.png" alt="img producto">
+                    <h2 class="product_card_name">Bicicleta Raleigh 700C Classic Nexus</h2>
+                    <input class="btn btn-outline-secondary product_card_mas" type="button" value="Más">
+                    <h2 class="product_card_price">$115000</h2>
+                    <button class="btn btn-outline-dark ">Agregar al carrito</button>
+                </div>
+            
+                <div class="product_card_description">
+                    <button type="button" class="btn-close align-self-end close-card-info" disabled aria-label="Close"></button>
+                    <h3>Rodado:<span>28</span></h3>
+                    <h3>Cuadro:<span>Aluminio</span></h3>
+                    <h3>Frenos:<span>Mecanico V-brake</span></h3>
+                    <h3>Velocidades:<span>3</span></h3>
+                    <h3>Color:<span>Negro</span></h3>
+                    <h3>Descripcion:</h3>
+                    <p>Bicicleta de paseo estilo vintage, liviana de aluminio con componentes modernos, al tener ruedas finas se
+                        combierte en una bicicleta ideal para paseos urbanos.</p>
+                </div>
+            </div>
+            <div class="product_card">
+                <div class="product_card_info">
+                    <img src="./assets/img/productos/raleight 700c.png" alt="img producto">
+                    <h2 class="product_card_name">Bicicleta Raleigh 700C Classic Nexus</h2>
+                    <input class="btn btn-outline-secondary product_card_mas" type="button" value="Más">
+                    <h2 class="product_card_price">$115000</h2>
+                    <button class="btn btn-outline-dark ">Agregar al carrito</button>
+                </div>
+            
+                <div class="product_card_description">
+                    <button type="button" class="btn-close align-self-end close-card-info" disabled aria-label="Close"></button>
+                    <h3>Rodado:<span>28</span></h3>
+                    <h3>Cuadro:<span>Aluminio</span></h3>
+                    <h3>Frenos:<span>Mecanico V-brake</span></h3>
+                    <h3>Velocidades:<span>3</span></h3>
+                    <h3>Color:<span>Negro</span></h3>
+                    <h3>Descripcion:</h3>
+                    <p>Bicicleta de paseo estilo vintage, liviana de aluminio con componentes modernos, al tener ruedas finas se
+                        combierte en una bicicleta ideal para paseos urbanos.</p>
+                </div>
+            </div>
+            <div class="product_card">
+                <div class="product_card_info">
+                    <img src="./assets/img/productos/raleight 700c.png" alt="img producto">
+                    <h2 class="product_card_name">Bicicleta Raleigh 700C Classic Nexus</h2>
+                    <input class="btn btn-outline-secondary product_card_mas" type="button" value="Más">
+                    <h2 class="product_card_price">$115000</h2>
+                    <button class="btn btn-outline-dark ">Agregar al carrito</button>
+                </div>
+            
+                <div class="product_card_description">
+                    <button type="button" class="btn-close align-self-end close-card-info" disabled aria-label="Close"></button>
+                    <h3>Rodado:<span>28</span></h3>
+                    <h3>Cuadro:<span>Aluminio</span></h3>
+                    <h3>Frenos:<span>Mecanico V-brake</span></h3>
+                    <h3>Velocidades:<span>3</span></h3>
+                    <h3>Color:<span>Negro</span></h3>
+                    <h3>Descripcion:</h3>
+                    <p>Bicicleta de paseo estilo vintage, liviana de aluminio con componentes modernos, al tener ruedas finas se
+                        combierte en una bicicleta ideal para paseos urbanos.</p>
+                </div>
+            </div>
+            <div class="product_card">
+                <div class="product_card_info">
+                    <img src="./assets/img/productos/raleight 700c.png" alt="img producto">
+                    <h2 class="product_card_name">Bicicleta Raleigh 700C Classic Nexus</h2>
+                    <input class="btn btn-outline-secondary product_card_mas" type="button" value="Más">
+                    <h2 class="product_card_price">$115000</h2>
+                    <button class="btn btn-outline-dark ">Agregar al carrito</button>
+                </div>
+            
+                <div class="product_card_description">
+                    <button type="button" class="btn-close align-self-end close-card-info" disabled aria-label="Close"></button>
+                    <h3>Rodado:<span>28</span></h3>
+                    <h3>Cuadro:<span>Aluminio</span></h3>
+                    <h3>Frenos:<span>Mecanico V-brake</span></h3>
+                    <h3>Velocidades:<span>3</span></h3>
+                    <h3>Color:<span>Negro</span></h3>
+                    <h3>Descripcion:</h3>
+                    <p>Bicicleta de paseo estilo vintage, liviana de aluminio con componentes modernos, al tener ruedas finas se
+                        combierte en una bicicleta ideal para paseos urbanos.</p>
+                </div>
+            </div>
+            <div class="product_card">
+                <div class="product_card_info">
+                    <img src="./assets/img/productos/raleight 700c.png" alt="img producto">
+                    <h2 class="product_card_name">Bicicleta Raleigh 700C Classic Nexus</h2>
+                    <input class="btn btn-outline-secondary product_card_mas" type="button" value="Más">
+                    <h2 class="product_card_price">$115000</h2>
+                    <button class="btn btn-outline-dark ">Agregar al carrito</button>
+                </div>
+            
+                <div class="product_card_description">
+                    <button type="button" class="btn-close align-self-end close-card-info" disabled aria-label="Close"></button>
+                    <h3>Rodado:<span>28</span></h3>
+                    <h3>Cuadro:<span>Aluminio</span></h3>
+                    <h3>Frenos:<span>Mecanico V-brake</span></h3>
+                    <h3>Velocidades:<span>3</span></h3>
+                    <h3>Color:<span>Negro</span></h3>
+                    <h3>Descripcion:</h3>
+                    <p>Bicicleta de paseo estilo vintage, liviana de aluminio con componentes modernos, al tener ruedas finas se
+                        combierte en una bicicleta ideal para paseos urbanos.</p>
+                </div>
+            </div>
+            <div class="product_card">
+                <div class="product_card_info">
+                    <img src="./assets/img/productos/raleight 700c.png" alt="img producto">
+                    <h2 class="product_card_name">Bicicleta Raleigh 700C Classic Nexus</h2>
+                    <input class="btn btn-outline-secondary product_card_mas" type="button" value="Más">
+                    <h2 class="product_card_price">$115000</h2>
+                    <button class="btn btn-outline-dark ">Agregar al carrito</button>
+                </div>
+            
+                <div class="product_card_description">
+                    <button type="button" class="btn-close align-self-end close-card-info" disabled aria-label="Close"></button>
+                    <h3>Rodado:<span>28</span></h3>
+                    <h3>Cuadro:<span>Aluminio</span></h3>
+                    <h3>Frenos:<span>Mecanico V-brake</span></h3>
+                    <h3>Velocidades:<span>3</span></h3>
+                    <h3>Color:<span>Negro</span></h3>
+                    <h3>Descripcion:</h3>
+                    <p>Bicicleta de paseo estilo vintage, liviana de aluminio con componentes modernos, al tener ruedas finas se
+                        combierte en una bicicleta ideal para paseos urbanos.</p>
+                </div>
+            </div>
+            <div class="product_card">
+                <div class="product_card_info">
+                    <img src="./assets/img/productos/raleight 700c.png" alt="img producto">
+                    <h2 class="product_card_name">Bicicleta Raleigh 700C Classic Nexus</h2>
+                    <input class="btn btn-outline-secondary product_card_mas" type="button" value="Más">
+                    <h2 class="product_card_price">$115000</h2>
+                    <button class="btn btn-outline-dark ">Agregar al carrito</button>
+                </div>
+            
+                <div class="product_card_description">
+                    <button type="button" class="btn-close align-self-end close-card-info" disabled aria-label="Close"></button>
+                    <h3>Rodado:<span>28</span></h3>
+                    <h3>Cuadro:<span>Aluminio</span></h3>
+                    <h3>Frenos:<span>Mecanico V-brake</span></h3>
+                    <h3>Velocidades:<span>3</span></h3>
+                    <h3>Color:<span>Negro</span></h3>
+                    <h3>Descripcion:</h3>
+                    <p>Bicicleta de paseo estilo vintage, liviana de aluminio con componentes modernos, al tener ruedas finas se
+                        combierte en una bicicleta ideal para paseos urbanos.</p>
+                </div>
+            </div>
+            <div class="product_card">
+                <div class="product_card_info">
+                    <img src="./assets/img/productos/raleight 700c.png" alt="img producto">
+                    <h2 class="product_card_name">Bicicleta Raleigh 700C Classic Nexus</h2>
+                    <input class="btn btn-outline-secondary product_card_mas" type="button" value="Más">
+                    <h2 class="product_card_price">$115000</h2>
+                    <button class="btn btn-outline-dark ">Agregar al carrito</button>
+                </div>
+            
+                <div class="product_card_description">
+                    <button type="button" class="btn-close align-self-end close-card-info" disabled aria-label="Close"></button>
+                    <h3>Rodado:<span>28</span></h3>
+                    <h3>Cuadro:<span>Aluminio</span></h3>
+                    <h3>Frenos:<span>Mecanico V-brake</span></h3>
+                    <h3>Velocidades:<span>3</span></h3>
+                    <h3>Color:<span>Negro</span></h3>
+                    <h3>Descripcion:</h3>
+                    <p>Bicicleta de paseo estilo vintage, liviana de aluminio con componentes modernos, al tener ruedas finas se
+                        combierte en una bicicleta ideal para paseos urbanos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about-us">
+        <section class="about-us_info">
+            <h1>Sobre Nosotros</h1>
+            <div class="carrousel-brands">
+                <div class="carrousel-brands-img">
+                    <img src="https://d2az8otjr0j19j.cloudfront.net/templates/851/022/twig/static/img/newbikes_r25_c9_s1.jpg?388989994"
+                        alt="logo raleight">
+                    <img src="https://d2az8otjr0j19j.cloudfront.net/templates/851/022/twig/static/img/newbikes_r23_c16_s1.jpg?388989994"
+                        alt="logo continental">
+                    <img src="https://d2az8otjr0j19j.cloudfront.net/templates/851/022/twig/static/img/newbikes_r25_c4_s1.jpg?388989994"
+                        alt="logo shimano">
+                    <img src="https://d2az8otjr0j19j.cloudfront.net/templates/851/022/twig/static/img/newbikes_r24_c34_s1.jpg?388989994"
+                        alt="logo haro">
+                    <img src="https://d2az8otjr0j19j.cloudfront.net/templates/851/022/twig/static/img/newbikes_r24_c26_s1.jpg?388989994"
+                        alt="logo suntour">
+                    <img src="https://d2az8otjr0j19j.cloudfront.net/templates/851/022/twig/static/img/newbikes_r24_c21_s1.jpg?388989994"
+                        alt="logo merida">
+                    <img src="https://d2az8otjr0j19j.cloudfront.net/templates/851/022/twig/static/img/newbikes_r18_c3_s1.jpg?388989994"
+                        alt="logo rally">
+                    <img src="https://d2az8otjr0j19j.cloudfront.net/templates/851/022/twig/static/img/newbikes_r17_c29_s1.jpg?388989994"
+                        alt="logo gt">
+                    <img src="https://d2az8otjr0j19j.cloudfront.net/templates/851/022/twig/static/img/newbikes_r13_c10_s1.jpg?388989994"
+                        alt="logo olmo">
+                    <img src="https://d2az8otjr0j19j.cloudfront.net/templates/851/022/twig/static/img/newbikes_r13_c3_s1.jpg?388989994"
+                        alt="logo trek">
+                </div>
+            </div>
+            <p>Nos centramos en asesorar de manera particular a cada cliente, respondemos sus inquitudes y ofrecemos un
+                producto acorde a sus necesidades, no dude en contactarse con nosotros a través del icono de WhatsApp o
+                dirigiendose a nuetra sucursal.</p>
+        </section>
+        <img class="about-us_img" src="./assets/img/montain and bike.jpg" alt="imagen de montaña">
+    </section>
+    <section id="contact">
+        <div class="contact_contactanos">
+            <h2>Contactese con nosotros</h2>
+            <p><i class="bi bi-whatsapp"></i>15-60754086</p>
+            <p><i class="bi bi-telephone"></i>011-1235-2036</p>
+            <p><i class="bi bi-envelope-at"></i>bike.store@gmail.com</p>
+            <p><i class="bi bi-geo-alt"></i>San Martin 773, Pilar, Buenos Aires</p>
+        </div>
+        <div class="contact_redes">
+            <h2>Siguenos en nuestras redes</h2>
+            <a target="_blank" href="https://www.instagram.com/"><img src="https://img.icons8.com/color/48/null/instagram-new--v1.png"alt="logo instagram"></a>
+            <a target="_blank" href="https://es-la.facebook.com/"><img src="https://img.icons8.com/color/48/null/facebook-circled--v1.png"alt="logo facebook"></a>
+            <a target="_blank" href="https://twitter.com/"><img src="https://img.icons8.com/color/48/null/twitter--v3.png" alt="logo twitter"/></a>
+        </div>
+        <div class="contact_pagos">
+            <h2>Medios de Pago</h2>
+            <div class="contact_pagos-medios">
+                <img src="https://th.bing.com/th/id/OIP.LI4Zi_fA8fLPNBnlWEqI2wHaFQ?pid=ImgDet&rs=1" alt="Ahora 12">
+                <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/bank_transfer_in_icon_136911.png" alt="transferencia bancaria">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png" alt="Mercado Pago">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png" alt="Visa">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png" alt="Mastercard">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png" alt="American Express">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/cabal@2x.png" alt="Cabal">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png" alt="Pago Facil">
+                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png" alt="Rapi Pago">  
+            </div>
+        </div>
+        <div class="contact_map">
+            <iframe class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1343.7745246846398!2d-58.91538530427814!3d-34.4596631791557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc9cce08dcf2a3%3A0x2a553b684fd3b5df!2sSan%20Mart%C3%ADn%20773%2C%20B1629ETO%20Pilar%20Centro%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1672584713658!5m2!1ses-419!2sar"
+                style="border:0;" allowfullscreen="" loading="lazy" width="550px" height="450px"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    <section id="shop">
+        <button type="button" class="btn-close align-self-end close-shop"  disabled aria-label="Close"></button>
+        <h2>Carrito</h2>
+        <div class="shop-container">
+            <div class="shop-card">
+                <button type="button" class="btn-close align-self-end close-product" disabled aria-label="Close"></button>
+                <img src="./assets/img/productos/raleight 700c.png" alt="imagen producto">
+                <h3>Bicicleta Raleigh 700C Classic Nexus</h3>
+                <div class="btn-group btn-group-sm shop-count" role="group" aria-label="Small button group">
+                    <button type="button" class="btn btn-outline-dark">-</button>
+                    <button type="button" class="btn btn-outline-dark">5</button>
+                    <button type="button" class="btn btn-outline-dark">+</button>
+                </div>
+                <h3 class="btn btn-outline-secondary btn-sm">Precio: <small>$100000</small></h3>
+            </div>
+            <div class="shop-card">
+                <button type="button" class="btn-close align-self-end close-product" disabled aria-label="Close"></button>
+                <img src="./assets/img/productos/raleight 700c.png" alt="imagen producto">
+                <h3>Bicicleta Raleigh 700C Classic Nexus</h3>
+                <div class="btn-group btn-group-sm shop-count" role="group" aria-label="Small button group">
+                    <button type="button" class="btn btn-outline-dark">-</button>
+                    <button type="button" class="btn btn-outline-dark">5</button>
+                    <button type="button" class="btn btn-outline-dark">+</button>
+                </div>
+                <h3 class="btn btn-outline-secondary btn-sm">Precio: <small>$100000</small></h3>
+            </div>
+            <div class="shop-card">
+                <button type="button" class="btn-close align-self-end close-product" disabled aria-label="Close"></button>
+                <img src="./assets/img/productos/raleight 700c.png" alt="imagen producto">
+                <h3>Bicicleta Raleigh 700C Classic Nexus</h3>
+                <div class="btn-group btn-group-sm shop-count" role="group" aria-label="Small button group">
+                    <button type="button" class="btn btn-outline-dark">-</button>
+                    <button type="button" class="btn btn-outline-dark">5</button>
+                    <button type="button" class="btn btn-outline-dark">+</button>
+                </div>
+                <h3 class="btn btn-outline-secondary btn-sm">Precio: <small>$100000</small></h3>
+            </div>
+            <div class="shop-card">
+                <button type="button" class="btn-close align-self-end close-product" disabled aria-label="Close"></button>
+                <img src="./assets/img/productos/raleight 700c.png" alt="imagen producto">
+                <h3>Bicicleta Raleigh 700C Classic Nexus</h3>
+                <div class="btn-group btn-group-sm shop-count" role="group" aria-label="Small button group">
+                    <button type="button" class="btn btn-outline-dark">-</button>
+                    <button type="button" class="btn btn-outline-dark">5</button>
+                    <button type="button" class="btn btn-outline-dark">+</button>
+                </div>
+                <h3 class="btn btn-outline-secondary btn-sm">Precio: <small>$100000</small></h3>
+            </div>
+            <div class="shop-card">
+                <button type="button" class="btn-close align-self-end close-product" disabled aria-label="Close"></button>
+                <img src="./assets/img/productos/raleight 700c.png" alt="imagen producto">
+                <h3>Bicicleta Raleigh 700C Classic Nexus</h3>
+                <div class="btn-group btn-group-sm shop-count" role="group" aria-label="Small button group">
+                    <button type="button" class="btn btn-outline-dark">-</button>
+                    <button type="button" class="btn btn-outline-dark">5</button>
+                    <button type="button" class="btn btn-outline-dark">+</button>
+                </div>
+                <h3 class="btn btn-outline-secondary btn-sm">Precio: <small>$100000</small></h3>
+            </div>
+            <div class="shop-card">
+                <button type="button" class="btn-close align-self-end close-product" disabled aria-label="Close"></button>
+                <img src="./assets/img/productos/raleight 700c.png" alt="imagen producto">
+                <h3>Bicicleta Raleigh 700C Classic Nexus</h3>
+                <div class="btn-group btn-group-sm shop-count" role="group" aria-label="Small button group">
+                    <button type="button" class="btn btn-outline-dark">-</button>
+                    <button type="button" class="btn btn-outline-dark">5</button>
+                    <button type="button" class="btn btn-outline-dark">+</button>
+                </div>
+                <h3 class="btn btn-outline-secondary btn-sm">Precio: <small>$100000</small></h3>
+            </div>
+            <div class="shop-card">
+                <button type="button" class="btn-close align-self-end close-product" disabled aria-label="Close"></button>
+                <img src="./assets/img/productos/raleight 700c.png" alt="imagen producto">
+                <h3>Bicicleta Raleigh 700C Classic Nexus</h3>
+                <div class="btn-group btn-group-sm shop-count" role="group" aria-label="Small button group">
+                    <button type="button" class="btn btn-outline-dark">-</button>
+                    <button type="button" class="btn btn-outline-dark">5</button>
+                    <button type="button" class="btn btn-outline-dark">+</button>
+                </div>
+                <h3 class="btn btn-outline-secondary btn-sm">Precio: <small>$100000</small></h3>
+            </div>
+            <div class="shop-card">
+                <button type="button" class="btn-close align-self-end close-product" disabled aria-label="Close"></button>
+                <img src="./assets/img/productos/raleight 700c.png" alt="imagen producto">
+                <h3>Bicicleta Raleigh 700C Classic Nexus</h3>
+                <div class="btn-group btn-group-sm shop-count" role="group" aria-label="Small button group">
+                    <button type="button" class="btn btn-outline-dark">-</button>
+                    <button type="button" class="btn btn-outline-dark">5</button>
+                    <button type="button" class="btn btn-outline-dark">+</button>
+                </div>
+                <h3 class="btn btn-outline-secondary btn-sm">Precio: <small>$100000</small></h3>
+            </div>
+        </div>
+        <h2>Total: <small class="total-price">30000</small></h2>
+        <select id="count-dues" class="form-select-sm" aria-label="Default select example">
+            <option selected>Elegir cuotas</option>
+            <option value="1">1 (Sin interés)</option>
+            <option value="2">3</option>
+            <option value="3">6</option>
+            <option value="3">12 (Sin interés)</option>
+        </select>
+        <button class="btn btn-secondary btn-sm ">Comprar</button>
+    </section>
+    <div class="background"></div>
+    <footer>
+        <p>© Copyright Bike Store - 2023. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
