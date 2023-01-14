@@ -16,7 +16,7 @@
 
 <body>
     <header>
-        <div class="menu-toggle"><button class="btn btn-outline-secondary btn-lg "><i class="bi bi-three-dots-vertical"></i></button></div>
+        <div class="menu-toggle"><button class="btn btn-outline-secondary btn-lg open-menu"><i class="bi bi-three-dots-vertical open-menu"></i></button></div>
         <div class="logo">
             <h3>Bike</h3>
             <img src="./assets/img/logo bike.png" alt="logo bike">
@@ -25,13 +25,13 @@
         
         <nav>
             <ul>
-                <li><a href="#hero"><i class="bi bi-house-door btn btn-dark btn-lg nav-icon"></i>Inicio</a></li>
-                <li><a href="#product"><i class="bi bi-shop btn btn-dark btn-lg nav-icon"></i>Productos</a></li>
-                <li><a href="#about-us"><i class="bi bi-info btn btn-dark btn-lg nav-icon"></i>Sobre Nosotros</a></li>
-                <li><a href="#contact"><i class="bi bi-telephone btn btn-dark btn-lg nav-icon"></i>Contacto</a></li>
+                <li><a class="nav-icon"href="#hero"><i class="bi bi-house-door btn btn-dark btn-lg nav-icon"></i>Inicio</a></li>
+                <li><a class="nav-icon"href="#product"><i class="bi bi-shop btn-dark btn-lg nav-icon"></i>Productos</a></li>
+                <li><a class="nav-icon"href="#about-us"><i class="bi bi-info btn-dark btn-lg nav-icon"></i>Sobre Nosotros</a></li>
+                <li><a class="nav-icon"href="#contact"><i class="bi bi-telephone btn btn-dark btn-lg nav-icon"></i>Contacto</a></li>
             </ul>
         </nav>
-        <button class="cart-icon"><i class="bi bi-cart-check btn btn-dark btn-lg nav-icon "></i>Carrito<small class="cart-numb">3</small></button>
+        <button class="cart-icon"><i class="bi bi-cart-check btn btn-dark btn-lg shop-icon"></i class="shop-icon">Carrito<small class="cart-numb shop-icon">3</small></button>
         <div class="login">
             <img class="avatar-img" src="./assets/img/avatar.png" alt="avatar">
             <p class="avatar-name">Cosme Fulanito</p>
@@ -364,15 +364,15 @@
         <div class="contact_pagos">
             <h2>Medios de Pago</h2>
             <div class="contact_pagos-medios">
-                <img src="https://th.bing.com/th/id/OIP.LI4Zi_fA8fLPNBnlWEqI2wHaFQ?pid=ImgDet&rs=1" alt="Ahora 12">
-                <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/bank_transfer_in_icon_136911.png" alt="transferencia bancaria">
-                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png" alt="Mercado Pago">
-                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png" alt="Visa">
-                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png" alt="Mastercard">
-                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png" alt="American Express">
-                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/cabal@2x.png" alt="Cabal">
-                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png" alt="Pago Facil">
-                <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png" alt="Rapi Pago">  
+                <img src="./assets/img/medios de pago/ahora12-icon.jpg" alt="Ahora 12">
+                <img src="./assets/img/medios de pago/bank_transfer_in_icon.png" alt="transferencia bancaria">
+                <img src="./assets/img/medios de pago/mercado-pago-icon.png" alt="Mercado Pago">
+                <img src="./assets/img/medios de pago/visa-icon.png" alt="Visa">
+                <img src="./assets/img/medios de pago/mastercard-icon.png" alt="Mastercard">
+                <img src="./assets/img/medios de pago/american-express-icon.png" alt="American Express">
+                <img src="./assets/img/medios de pago/cabal-icon.png" alt="Cabal">
+                <img src="./assets/img/medios de pago/pagofacil-icon.png" alt="Pago Facil">
+                <img src="./assets/img/medios de pago/rapipago-icon.png" alt="Rapi Pago">  
             </div>
         </div>
         <div class="contact_map">
@@ -382,8 +382,7 @@
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
-    <section id="shop">
-        <button type="button" class="btn-close align-self-end close-shop"  disabled aria-label="Close"></button>
+    <section class="shop">
         <h2>Carrito</h2>
         <div class="shop-container">
             <div class="shop-card">
@@ -483,12 +482,15 @@
             <option value="3">6</option>
             <option value="3">12 (Sin interés)</option>
         </select>
-        <button class="btn btn-secondary btn-sm ">Comprar</button>
+        <button class="btn btn-secondary btn-sm button-buy">Comprar</button>
     </section>
     <div class="background"></div>
     <footer>
         <p>© Copyright Bike Store - 2023. Todos los derechos reservados.</p>
     </footer>
+
+
+    <script src="./assets/js/index.js"></script>
 </body>
 
 </html>
