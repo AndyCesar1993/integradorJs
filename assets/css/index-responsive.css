@@ -68,6 +68,31 @@
         grid-area: 3 / 1 / 4 / 3;
     }
 
+    /*Shop*/
+
+    .shop-card{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto auto;
+    }
+    .shop-card-close{
+        grid-area: 1 / 2 / 2 / 3;
+        margin-left: auto;
+        margin-right: 10px;
+    }
+    .shop-card img{
+        grid-area: 1 / 1 / 5 / 2;
+    }
+    .card-shop-name{
+        grid-area: 2 / 2 / 3 / 3;
+    }
+    .shop-card-count{
+        grid-area: 3 / 2 / 4 / 3;
+    }
+    .shop-card-price{
+        grid-area: 4 / 2 / 5 / 3;
+    }
+
     @keyframes carrousel {
         0% {
         transform: translateX(0%);
