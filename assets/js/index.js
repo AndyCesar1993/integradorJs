@@ -4,7 +4,7 @@ const shop = document.querySelector(".shop");
 const productCardDescription = document.querySelector (".product_card_description");
 const loginHtml = document.querySelector(".login-container");
 
-let user=JSON.parse(localStorage.getItem("user"))|| [];
+let user= JSON.parse(localStorage.getItem("user"))||[];
 
 const saveLocalStorage =(user)=>{
     localStorage.setItem("user",JSON.stringify(user));

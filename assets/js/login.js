@@ -12,17 +12,37 @@ class Person{
         this.password = password;
         this.avatar = avatar;
     }
+
 }
 
-const person = [
+let newUser= JSON.parse(localStorage.getItem("newUser"))||[];
+
+const saveLocalStorageNewUser =(newUser)=>{
+    localStorage.setItem("newUser",JSON.stringify(newUser));
+}
+
+/* const person = [
     new Person(1,"Cosme Fulanito","admin","admin@admin.com","admin","././assets/img/avatar.png"),
     new Person(2,"Cesar","cesar","cesar@cesar.com","cesar","././assets/img/avatar.png"),
+] */
 
-];
+
 
 const searchUser = (username)=>{
-    user = person.find((user)=>user.username === username);
+    user = newUser.find((user)=>user.username === username);
+    if(!user){
+        renderHtmlError("El nombre de usario no existe!");
+        return
+    }if (user.password !== inputPassword.value){
+        renderHtmlError("La contraseña es incorrecta!");
+        return
+    }else{
+        saveLocalStorage(user);
+        window.location.href= "././index.html";
+        return
+    }     
 }
+
 const renderHtmlError = (msj) =>{
     renderError.textContent=msj;
 }
@@ -31,31 +51,24 @@ const emptiCamp=(input)=>{
     return input.value === ""
 }
 
-const passwordOk=(input)=>{
-    return input.value === user.password
-}
-const usernameOk=(input)=>{
-    return input.value === user.username
-}
-
-
 
 const validation=(e)=>{
     e.preventDefault()
-    searchUser(inputUsername.value)
-    saveLocalStorage(user)
     if(emptiCamp(inputUsername)){
         renderHtmlError("Se debe ingreasr un nombre de usuario!");
+        return
     }if (emptiCamp(inputPassword)){
         renderHtmlError("Se debe ingresar una contraseña!");
-    }if(!passwordOk(inputPassword)&&(!emptiCamp(inputUsername))&&(!emptiCamp(inputPassword))){
-        renderHtmlError("El nombre de usario y/o la contraseña son incorrectos!");
-    }if(!usernameOk(inputUsername)&&(!emptiCamp(inputUsername))&&(!emptiCamp(inputPassword))){
-        renderHtmlError("El nombre de usario y/o la contraseña son incorrectos!");
-    }if((usernameOk(inputUsername))&&(passwordOk(inputPassword))){
-        window.location.href= "././index.html";
+        return
+    }else {
+        searchUser(inputUsername.value);
+        formLogin.reset();
     }
-    formLogin.reset()
+    
 }
 
-formLogin.addEventListener("submit",validation);
+const initLogin=()=>{
+    formLogin.addEventListener("submit",validation); 
+}
+
+initLogin();

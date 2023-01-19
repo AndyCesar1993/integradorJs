@@ -1,0 +1,35 @@
+@media (max-width:450px){
+    .login-icon,
+    .register-icon{
+        font-size: 50px;
+    }
+    .login-tittle,
+    .register-tittle{
+        font-size: 25px;
+    }
+    .login-username i,
+    .login-password i,
+    .register-right i,
+    .register-left i{
+        font-size: 30px;
+    }
+    .login-username input,
+    .login-password input,
+    .register-right input,
+    .register-left input,
+    .button-avatar{
+        max-width: 200px;
+        font-size: 17px;
+    }
+    .login-form_submit,
+    .register-form_submit{
+        font-size: 20px;
+    }
+    .avatars-check img{
+        width: 30px;
+        height: 60px;
+    }
+    .avatars-check{
+        width: 200px;
+    }
+}
