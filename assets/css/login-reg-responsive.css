@@ -32,4 +32,18 @@
     .avatars-check{
         width: 200px;
     }
+    .render-error,
+    .register-error{
+        font-size: 17px;
+        max-width: 200px;
+    }
+    .avatars-check img:hover{
+        width: 50px;
+        height: 80px;
+    }
+    .selected {
+        width: 50px;
+        height: 80px;
+        transform: scale(1.1);
+    }
 }

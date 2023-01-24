@@ -63,6 +63,15 @@ const avatarchecked =() =>{
     }
 }
 
+
+/*numero de id*/
+
+const numberId =()=>{
+    let id = Number(newUser.length + 1)
+    return id
+}
+
+
 /*input validation*/
 
 const emailRequest = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
@@ -92,8 +101,13 @@ const checkName=()=>{
 
 const checkUserName=()=>{
     let userName=inputRegisterUserName.value.trim();
+    chekExistUser = newUser.find((user)=>user.username === userName);
+
     if(isEmpty(userName)){
-        renderRegisterlError("ingrese un User-Name!");
+        renderRegisterlError("ingrese un Usuario!");
+        return
+    }if(chekExistUser){
+        renderRegisterlError("El nombre de usario ya existe!");
         return
     }if(!isBetween(userName.length, 3 , 20)){
         renderRegisterlError("El nobre de usuario debe tener entre 3 y 20 caracteres!");
@@ -143,9 +157,10 @@ const register=(e)=>{
     }if(!avatarchecked()){
         return
     }else{
-        newUser=[...newUser, new Person(1,checkName(),checkUserName(),checkEmail(),checkPassword(),avatarchecked())];
+        newUser=[...newUser, new Person(numberId(),checkName(),checkUserName(),checkEmail(),checkPassword(),avatarchecked())];
         saveLocalStorageNewUser(newUser);
         registerForm.reset();
+        alert("El usuario fue creado correctamente")
         window.location.href= "././login.html";
     }
     

@@ -3,6 +3,8 @@ const formLogin = document.querySelector(".login-form");
 const inputUsername = document.getElementById("user-name");
 const inputPassword = document.getElementById("password");
 
+/*User*/
+
 class Person{
     constructor(id,name,username,email,password,avatar){
         this.id = id;
@@ -21,12 +23,6 @@ const saveLocalStorageNewUser =(newUser)=>{
     localStorage.setItem("newUser",JSON.stringify(newUser));
 }
 
-/* const person = [
-    new Person(1,"Cosme Fulanito","admin","admin@admin.com","admin","././assets/img/avatar.png"),
-    new Person(2,"Cesar","cesar","cesar@cesar.com","cesar","././assets/img/avatar.png"),
-] */
-
-
 
 const searchUser = (username)=>{
     user = newUser.find((user)=>user.username === username);
@@ -43,13 +39,26 @@ const searchUser = (username)=>{
     }     
 }
 
+
+
+
+/*Renderizar error*/
+
+
 const renderHtmlError = (msj) =>{
     renderError.textContent=msj;
 }
 
+
+/*Campo vacio*/
+
 const emptiCamp=(input)=>{
     return input.value === ""
 }
+
+
+
+/*Validar entrada*/
 
 
 const validation=(e)=>{

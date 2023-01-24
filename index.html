@@ -55,50 +55,34 @@
             <label class="filter_check" for="filter" class="mb-3">Filtrar</label>
             <input type="checkbox" name="filter" id="filter">
             <div class="search-products_filter">
-                <select id="earch-products_tipo">
-                    <option value="paseo">Paseo</option>
+                <select id="search-products_tipo">
+                    <option value="tipo">Tipo</option>
+                    <option value="urbana">Urbana</option>
                     <option value="mtb">Montaña</option>
-                    <option value="pista">Pista</option>
-                    <option value="carrera">Carrera</option>
+                    <option value="ruta">Ruta</option>
+                    <option value="accesorios">Accesorios</option>
                 </select>
-                <select id="earch-products_rodado">
-                    <option value="R29">Rodado 29</option>
-                    <option value="R28">Rodado 28</option>
-                    <option value="R27.5">Rodado 27,5</option>
-                    <option value="R26">Rodado 26</option>
+                <select id="search-products_rodado">
+                    <option value="rodado">Rodado</option>
+                    <option value="29">Rodado 29</option>
+                    <option value="28">Rodado 28</option>
+                    <option value="27.5">Rodado 27,5</option>
+                    <option value="26">Rodado 26</option>
                 </select>
-                <select id="earch-products_cuadro">
+                <select id="search-products_cuadro">
+                    <option value="cuadro">Cuadro</option>
                     <option value="aluminio">Aluminio</option>
                     <option value="acero">Acero</option>
                     <option value="carbono">Carbono</option>
                 </select>
             </div>
             <button class="search-products_submit" type="submit"><i class="bi bi-search"></i></button>
-        
         </form>
+        <small class="error-product"></small>
         <div class="poduct_container">
-            <div class="product_card">
-                <div class="product_card_info">
-                    <img src="./assets/img/productos/raleight 700c.png" alt="img producto">
-                    <h2 class="product_card_name">Bicicleta Raleigh 700C Classic Nexus</h2>
-                    <input class="btn btn-outline-secondary product_card_more" type="button" value="Más">
-                    <h2 class="product_card_price">$115000</h2>
-                    <button class="btn btn-outline-dark ">Agregar al carrito</button>
-                </div>
-            
-                <div class="product_card_description">
-                    <div class="product_card_description_close align-self-end"><button type="button" class="btn-close" disabled aria-label="Close"></button></div>
-                    <h3>Rodado:<span>28</span></h3>
-                    <h3>Cuadro:<span>Aluminio</span></h3>
-                    <h3>Frenos:<span>Mecanico V-brake</span></h3>
-                    <h3>Velocidades:<span>3</span></h3>
-                    <h3>Color:<span>Negro</span></h3>
-                    <h3>Descripcion:</h3>
-                    <p>Bicicleta de paseo estilo vintage, liviana de aluminio con componentes modernos, al tener ruedas finas se
-                        combierte en una bicicleta ideal para paseos urbanos.</p>
-                </div>
-            </div>
-            
+
+            <!-- Product Cards -->
+
         </div>
     </section>
     <section id="about-us">
