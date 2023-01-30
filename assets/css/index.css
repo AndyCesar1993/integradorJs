@@ -74,6 +74,7 @@ header nav ul li a{
     text-decoration: none;
 }
 .cart-numb{
+    display: none;
     background: var(--bs-danger);
     font-size: 20px;
     font-weight: bolder;
@@ -98,9 +99,7 @@ header nav ul li a{
     color: var(--gray);
     cursor: pointer;
 }
-.login-container a{
-    text-decoration: none;
-}
+
 .avatar-name{
     color: var(--gray);
     font-size: 15px;
@@ -234,6 +233,10 @@ header nav ul li a{
     max-width: 250px;
 }
 
+.products-vermas{
+    justify-content: center;
+}
+
 /*About Us*/
 #about-us{
     display: flex;
@@ -343,7 +346,14 @@ header nav ul li a{
     padding: 20px;
     box-shadow: 3px 3px 20px 3px black;
 }
-#shop h2{
+.shop-buy{
+    display: none;
+    flex-direction: column;
+}
+.shop-buy h2{
+    font-size: 23px;
+}
+.total-price{
     font-size: 20px;
 }
 .shop-container{
@@ -351,9 +361,6 @@ header nav ul li a{
     flex-direction: column;
     gap: 15px;
     overflow-y: scroll;
-}
-.total-price{
-    font-size: 20px;
 }
 .shop-container::-webkit-scrollbar{
     display: none;

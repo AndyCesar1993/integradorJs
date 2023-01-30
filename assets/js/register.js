@@ -91,7 +91,7 @@ const checkName=()=>{
         renderRegisterlError("Ingrese un Nombre!");
         return
     }if(!isBetween(name.length, 3 , 20)){
-        renderRegisterlError("El nobre debe tener entre 3 y 20 caracteres!");
+        renderRegisterlError("El nombre debe tener entre 3 y 20 caracteres!");
         return
     }else{
         renderRegisterlError("");
@@ -110,7 +110,7 @@ const checkUserName=()=>{
         renderRegisterlError("El nombre de usario ya existe!");
         return
     }if(!isBetween(userName.length, 3 , 20)){
-        renderRegisterlError("El nobre de usuario debe tener entre 3 y 20 caracteres!");
+        renderRegisterlError("El nombre de usuario debe tener entre 3 y 20 caracteres!");
     }else{
         renderRegisterlError("");
         return userName

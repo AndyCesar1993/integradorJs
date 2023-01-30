@@ -84,6 +84,8 @@
             <!-- Product Cards -->
 
         </div>
+        <div class="products-vermas"><button class="btn btn-outline-secondary products-vermas" >Ver Más</button></div>
+        
     </section>
     <section id="about-us">
         <section class="about-us_info">
@@ -156,28 +158,23 @@
     <section class="shop">
         <h2>Carrito</h2>
         <div class="shop-container">
-            <div class="shop-card">
-                <button type="button" class="btn-close align-self-end shop-card-close" disabled aria-label="Close"></button>
-                <img src="./assets/img/productos/raleight 700c.png" alt="imagen producto">
-                <h3 class="card-shop-name">Bicicleta Raleigh 700C Classic Nexus</h3>
-                <div class="btn-group btn-group-sm shop-count shop-card-count" role="group" aria-label="Small button group">
-                    <button type="button" class="btn btn-outline-dark">-</button>
-                    <button type="button" class="btn btn-outline-dark">5</button>
-                    <button type="button" class="btn btn-outline-dark">+</button>
-                </div>
-                <h3 class="btn btn-outline-secondary btn-sm shop-card-price">Precio: <small>$100000</small></h3>
-            </div>
+            
+            <!--  Product Shop Cards -->
             
         </div>
-        <h2>Total: <small class="total-price">30000</small></h2>
-        <select id="count-dues" class="form-select-sm" aria-label="Default select example">
-            <option selected>Elegir cuotas</option>
-            <option value="1">1 (Sin interés)</option>
-            <option value="2">3</option>
-            <option value="3">6</option>
-            <option value="3">12 (Sin interés)</option>
-        </select>
-        <button class="btn btn-secondary btn-sm button-buy">Comprar</button>
+        <div class="shop-buy">
+            <h2>Total: <small class="total-price"></small></h2>
+            <div>
+                <select id="count-dues" class="form-select-sm" aria-label="Default select example">
+                    <option selected>Elegir cuotas</option>
+                    <option value="1">1 (Sin interés)</option>
+                    <option value="2">3</option>
+                    <option value="3">6</option>
+                    <option value="3">12 (Sin interés)</option>
+                </select>
+                <button class="btn btn-secondary btn-sm button-buy">Comprar</button>
+            </div>
+        </div>
     </section>
     <div class="background"></div>
     <footer>
@@ -185,6 +182,7 @@
     </footer>
 
 
+    <script src="./assets/js/products.js"></script>
     <script src="./assets/js/login.js"></script>
     <script src="./assets/js/index.js"></script>
 </body>

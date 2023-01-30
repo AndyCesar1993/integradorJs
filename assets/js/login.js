@@ -1,7 +1,7 @@
 const renderError = document.querySelector(".render-error");
-const formLogin = document.querySelector(".login-form");
 const inputUsername = document.getElementById("user-name");
 const inputPassword = document.getElementById("password");
+const formLogin = document.querySelector(".login-form");
 
 /*User*/
 
@@ -81,3 +81,4 @@ const initLogin=()=>{
 }
 
 initLogin();
+
