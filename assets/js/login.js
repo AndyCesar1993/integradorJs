@@ -3,19 +3,17 @@ const inputUsername = document.getElementById("user-name");
 const inputPassword = document.getElementById("password");
 const formLogin = document.querySelector(".login-form");
 
-/*User*/
 
-class Person{
-    constructor(id,name,username,email,password,avatar){
-        this.id = id;
-        this.name = name;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.avatar = avatar;
-    }
 
+/*User Login*/
+
+let user= JSON.parse(localStorage.getItem("user"))||[];
+
+const saveLocalStorage =(user)=>{
+    localStorage.setItem("user",JSON.stringify(user));
 }
+
+/*New User Register*/
 
 let newUser= JSON.parse(localStorage.getItem("newUser"))||[];
 
@@ -23,9 +21,10 @@ const saveLocalStorageNewUser =(newUser)=>{
     localStorage.setItem("newUser",JSON.stringify(newUser));
 }
 
+/*Search User*/
 
 const searchUser = (username)=>{
-    user = newUser.find((user)=>user.username === username);
+    user = newUser.find((user)=>user.username === username.toLowerCase());
     if(!user){
         renderHtmlError("El nombre de usario no existe!");
         return

@@ -16,9 +16,9 @@ const errorProduct=document.querySelector(".error-product");
 
 
 
+/*User Login*/
 
 let user= JSON.parse(localStorage.getItem("user"))||[];
-
 const saveLocalStorage =(user)=>{
     localStorage.setItem("user",JSON.stringify(user));
 }

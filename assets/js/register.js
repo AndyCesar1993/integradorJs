@@ -8,6 +8,29 @@ const inputRegisterUserName = document.getElementById("user-name");
 const inputRegisterEmail = document.getElementById("email");
 const inputRegisterPassword = document.getElementById("password");
 
+/*User*/
+
+class Person{
+    constructor(id,name,username,email,password,avatar){
+        this.id = id;
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.avatar = avatar;
+    }
+
+}
+
+
+/*New User Register*/
+
+let newUser= JSON.parse(localStorage.getItem("newUser"))||[];
+
+const saveLocalStorageNewUser =(newUser)=>{
+    localStorage.setItem("newUser",JSON.stringify(newUser));
+}
+
 
 /*renderizar error*/
 const renderRegisterlError = (msj) =>{
@@ -30,7 +53,9 @@ const selectAvatarButton=(e)=>{
     }
 }
 
-const traductor = avatar =>{
+/*Return Avatar Img*/
+
+const inputAvatar = avatar =>{
     switch(avatar){
     case "bart":
         return "./assets/img/avatars/bart.png";
@@ -59,7 +84,7 @@ const avatarchecked =() =>{
         return
     }else{
         renderRegisterlError("");
-        return traductor(avatarInputCheck.id);
+        return inputAvatar(avatarInputCheck.id);
     }
 }
 
@@ -75,6 +100,7 @@ const numberId =()=>{
 /*input validation*/
 
 const emailRequest = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+//const passwordRequest = /^(?=.*[a-z])(?=.*[0-9]){9}$/;
 const passwordRequest = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
 
 const isEmpty = (value) => value === "";
@@ -101,7 +127,7 @@ const checkName=()=>{
 
 const checkUserName=()=>{
     let userName=inputRegisterUserName.value.trim();
-    chekExistUser = newUser.find((user)=>user.username === userName);
+    chekExistUser = newUser.find((user)=>user.username === userName.toLowerCase());
 
     if(isEmpty(userName)){
         renderRegisterlError("ingrese un Usuario!");
@@ -113,7 +139,7 @@ const checkUserName=()=>{
         renderRegisterlError("El nombre de usuario debe tener entre 3 y 20 caracteres!");
     }else{
         renderRegisterlError("");
-        return userName
+        return userName.toLowerCase()
     }
 }
 
@@ -135,7 +161,7 @@ const checkPassword =()=>{
         renderRegisterlError("ingrese una Contraseña!");
         return
     }if(!passwordValid(password)){
-        renderRegisterlError("La contraseña debe ser alfanumerica,contener al menos un simbolo y una Mayuscular!");
+        renderRegisterlError("La contraseña debe ser alfanumerica,contener al menos un simbolo y una Mayuscula!");
     }else{
         renderRegisterlError("");
         return password

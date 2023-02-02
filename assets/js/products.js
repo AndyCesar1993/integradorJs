@@ -4,12 +4,16 @@ const buttonVerMas = document.querySelector(".products-vermas");
 
 /*open and close product card description*/
 const openMoreProduct=(e)=>{
-  let parentElement=e.target.parentNode.parentNode;
-  let productCardDescription = parentElement.querySelector(".product_card_description");
+  let parentElement="";
+  let productCardDescription = "";
   if(e.target.classList.contains("product_card_more")){
-      productCardDescription.classList.add("flex-on");
+    parentElement=e.target.parentNode.parentNode;
+    productCardDescription = parentElement.querySelector(".product_card_description");
+    productCardDescription.classList.add("flex-on");
+    return
   }if(e.target.classList.contains("product_card_description_close")){
-      productCardDescription.classList.remove("flex-on");
+    productCardDescription = e.target.parentNode.parentNode.querySelector(".product_card_description");
+    productCardDescription.classList.remove("flex-on");
   }
 }
 
@@ -131,34 +135,32 @@ const renderErrorProduct = (msj) =>{
 
 /*Render in HTML*/
 
-const renderCardsHtml =(arrays)=>{
-  productContainer.innerHTML = arrays.slice(0,maxLengthRender).map((card)=>renderProductCard(card));
-}
 
-    let cardsToRender =[];
+
     let rendersCards = [];
     let maxLengthRender = 5;
 
+const renderCardsHtml =(arrays)=>{
+  if(arrays.length<=maxLengthRender){
+    buttonVerMas.style.display="none"
+  }else buttonVerMas.style.display="flex"
+  productContainer.innerHTML = arrays.slice(0,maxLengthRender).map((card)=>renderProductCard(card)).join("");
+}
+
 const renderToHtml= (cards) =>{
   rendersCards = cards
-  let maxLengthRender = 5;
-    if(cards.length > maxLengthRender){
-      buttonVerMas.style.display="flex"
-    }if(cards.length < maxLengthRender && maxLengthRender > 5){
-      buttonVerMas.style.display="none"
-    }
-    renderCardsHtml(cards)
+  maxLengthRender = 5;
+  renderCardsHtml(cards)
 }
 
 const productsVerMas = (e)=>{
   if(e.target.classList.contains("products-vermas")){
-    if(rendersCards.length > maxLengthRender && rendersCards.length > maxLengthRender + 5){
+    if(rendersCards.length > maxLengthRender && rendersCards.length >= maxLengthRender + 5){
       maxLengthRender = maxLengthRender + 5;
       renderCardsHtml(rendersCards)
       return
     }if(rendersCards.length < maxLengthRender + 5){
       maxLengthRender = rendersCards.length;
-      buttonVerMas.style.display="none"
       renderCardsHtml(rendersCards)
       return
     }
@@ -2247,7 +2249,7 @@ const rederShop = ({id,img,name,price,amount}) =>{
 }
 
 const rederShopToHtml = (array)=>{
-  shopContainer.innerHTML= array.map((card)=>rederShop(card));
+  shopContainer.innerHTML= array.map((card)=>rederShop(card)).join("");
 }
 
 const addToShop = e=>{
