@@ -90,10 +90,18 @@ const closeSession=e=>{
     }
 }
 
+/*Format number decimal*/
+
+const formatNumb = (numb)=>{
+
+    return numb.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+}
+
 
 const init=()=>{
     renderLogin(user)
     renderToHtml(bikers);
+    window.addEventListener("click",allProducts)
     window.addEventListener("click",redirecLogin);
     window.addEventListener("click",menuToggle);
     window.addEventListener("click",openShop);

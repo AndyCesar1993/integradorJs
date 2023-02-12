@@ -7,6 +7,7 @@ const inputRegisterName = document.getElementById("name");
 const inputRegisterUserName = document.getElementById("user-name");
 const inputRegisterEmail = document.getElementById("email");
 const inputRegisterPassword = document.getElementById("password");
+const inputRegisterPasswordAgain = document.getElementById("password-again");
 
 /*User*/
 
@@ -168,6 +169,19 @@ const checkPassword =()=>{
     }
 }
 
+const checkPasswordAgain = () =>{
+    let password = inputRegisterPasswordAgain.value.trim();
+    if(isEmpty(password)){
+        renderRegisterlError("ingrese una Contraseña!");
+        return
+    }if(inputRegisterPassword.value.trim()!== inputRegisterPasswordAgain.value.trim()){
+        renderRegisterlError("Las contraseñas no coinciden!");
+    }else{
+        renderRegisterlError("");
+        return password
+    }
+}
+
 
 /*register*/
 const register=(e)=>{
@@ -181,6 +195,8 @@ const register=(e)=>{
     }if(!checkPassword()){
         return
     }if(!avatarchecked()){
+        return
+    }if(!checkPasswordAgain()){
         return
     }else{
         newUser=[...newUser, new Person(numberId(),checkName(),checkUserName(),checkEmail(),checkPassword(),avatarchecked())];

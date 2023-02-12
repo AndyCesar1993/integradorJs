@@ -1,4 +1,6 @@
 const buttonVerMas = document.querySelector(".products-vermas");
+const buttonVerTodos = document.querySelector(".products-all");
+const loading = document.querySelector(".loading");
 
 /*Productos*/
 
@@ -95,6 +97,36 @@ const bikers =[
     
     new productBikers(19,"Shifter Doble Suspensiónn","./assets/img/productos/Shifter Doble Suspensiónn.jpg","MTB",26,"Shifter","Acero","M","Disco 160mm Mecanico",21,"Negro y Rojo",
     "Bicicleta de descenso, al tener doble suspencion y freno a disco, es ideal para comenzar en el mundo del montañismo.",60000),
+    
+    new productBikers(20,"Porta Equipaje","./assets/img/productos/porta equipaje.jpg","Accessories",29,"fire bird","Aluminio","Xs - Xl","-","-","Negro",
+    "Porta Equipaje de aluminio para bicicletas de R24-R29, soporta hasta 25kg gracias a su doble anclaje.",10000),
+    
+    new productBikers(21,"Porta Equipaje Flotante","./assets/img/productos/Porta equipaje flotante.jpg","Accessories",29,"#N/A","Aluminio","Xs - Xl","-","-","Negro",
+    "Porta Equipaje de aluminio para bicicletas de R24-R29, soporta hasta 10kg, anclaje simple y estetico al asiento.",7000),
+    
+    new productBikers(22,"Asiento Prostatico","./assets/img/productos/Asiento Prostatico.jpg","Accessories",29,"Dakota","Gel","M","-","-","Negro y Amarillo",
+    "Asiento anti Prostatico de gel, muy comodo, ideal para uso diario.",3000),
+    
+    new productBikers(23,"Asiento Prostatico","./assets/img/productos/Asiento Anti-prostatico.jpg","Accessories",29,"Dakota","Gel","M","-","-","Negro y Azul",
+    "Asiento anti Prostatico de gel, muy comodo, ideal para uso diario.",4500),
+    
+    new productBikers(24,"Kit Luces","./assets/img/productos/Kit luces.jpg","Accessories",29,"Dakota","Led","-","-","-","Negro y Rojo",
+    "Kit de luces led recargable, luz led delantera de 300 lúmenes blanca + trasera de 15 lúmenes roja.",3200),
+    
+    new productBikers(25,"Casco Mtb","./assets/img/productos/Casco.jpg","Accessories",29,"Giant","Policarbonato","M","-","-","Negro",
+    "Casco Giant para Mtb con regulación y ventilación, muy comodo y liviano.",21900),
+    
+    new productBikers(26,"Luz trasera","./assets/img/productos/Luz trasera.jpg","Accessories",29,"2M Sports","pvc","M","-","-","Rojo",
+    "Luz trasera color roja de 100 lúmenes, recargable con sensor de freno.",3500),
+    
+    new productBikers(27,"Luz delantera recargable","./assets/img/productos/Luz recargable delantera.jpg","Accessories",29,"Gadnic","Aluminio","M","-","-","Negro",
+    "Luz delantera led blanca de 400 lúmenes recargable.",11100),
+    
+    new productBikers(28,"Kit Freno V Brake","./assets/img/productos/Freno V Brake.jpg","Accessories",26,"Top Mega","Aluminio","-","V-Brake","-","Negro",
+    "Kit de freno V-Brake con manijas de aluminio, pastillas y cables.",1800),
+    
+    new productBikers(29,"Kit freno hidraulico","./assets/img/productos/Kit freno hidraulico.jpg","Accessories",29,"Top Mega","Aluminio","-","Disco 180mm Hidraulico","-","Negro",
+    "Kit de freno Hidraulico con manijas de aluminio,incluye calipers con pastillas, manijas de freno, caños y discos de 180mm.",12700),
 ]
 
 
@@ -103,18 +135,19 @@ const bikers =[
 /* Render Products*/
 
 
-const renderProductCard = ({id,img,name,wheels,frame,size,brake,vel,color,des,price}) =>{
+const renderProductCard = ({id,img,name,wheels,brand,frame,size,brake,vel,color,des,price}) =>{
     return `<div class="product_card">
     <div class="product_card_info">
-        <img src="${img}" alt="img producto">
+        <div class="img-product"><img src="${img}" alt="img producto"></div>
         <h2 class="product_card_name">${name}</h2>
         <input class="btn btn-outline-secondary product_card_more" type="button" value="Más">
-        <h2 class="product_card_price">$${price}</h2>
+        <h2 class="product_card_price">$ ${formatNumb(price)}</h2>
         <button class="btn btn-outline-dark add-to-cart" data-id="${id}">Agregar al carrito</button>
     </div>
 
     <div class="product_card_description">
         <div class="product_card_description_close align-self-end"><button type="button" class="btn-close" disabled aria-label="Close"></button></div>
+        <h3>Marca:<span>${brand}</span></h3>
         <h3>Rodado:<span>${wheels}</span></h3>
         <h3>Cuadro:<span>${frame}</span></h3>
         <h3>Talle:<span>${size}</span></h3>
@@ -143,7 +176,10 @@ const renderErrorProduct = (msj) =>{
 const renderCardsHtml =(arrays)=>{
   if(arrays.length<=maxLengthRender){
     buttonVerMas.style.display="none"
-  }else buttonVerMas.style.display="flex"
+    buttonVerTodos.style.display="flex";
+  }else {
+    buttonVerMas.style.display="flex"
+    buttonVerTodos.style.display="none";}
   productContainer.innerHTML = arrays.slice(0,maxLengthRender).map((card)=>renderProductCard(card)).join("");
 }
 
@@ -157,14 +193,33 @@ const productsVerMas = (e)=>{
   if(e.target.classList.contains("products-vermas")){
     if(rendersCards.length > maxLengthRender && rendersCards.length >= maxLengthRender + 5){
       maxLengthRender = maxLengthRender + 5;
-      renderCardsHtml(rendersCards)
+      loading.style.display="flex"
+      setTimeout(() => {
+        loading.style.display="none"
+        renderCardsHtml(rendersCards)
+      }, 1500);
       return
     }if(rendersCards.length < maxLengthRender + 5){
       maxLengthRender = rendersCards.length;
-      renderCardsHtml(rendersCards)
+      loading.style.display="flex"
+      setTimeout(() => {
+        loading.style.display="none"
+        renderCardsHtml(rendersCards)
+      }, 1500);
       return
     }
   }
+}
+
+const allProducts = (e)=>{
+  if(e.target.classList.contains("products-all")){
+    loading.style.display="flex"
+      setTimeout(() => {
+        loading.style.display="none"
+        renderCardsHtml(rendersCards)
+        window.scroll(0, 600)
+      }, 1500);
+  }else return
 }
 
 
@@ -184,6 +239,7 @@ const searchProducts = (e) => {
   let productFilterUrban=bikers.filter((product) => product.type === "Urbana");
   let productFilterMtb= bikers.filter((product) => product.type === "MTB");
   let productFilterRuta=bikers.filter((product) => product.type === "ruta");
+  let productFilterAccesories=bikers.filter((product) => product.type === "Accessories");
   let productFilter29=bikers.filter((product) => product.wheels === 29);
   let productFilter28=bikers.filter((product) => product.wheels === 28);
   let productFilter275=bikers.filter((product) => product.wheels === 27.5);
@@ -204,8 +260,21 @@ const searchProducts = (e) => {
       }
     }else return
   }
+
   filterName();
 
+
+  /*Search Filter Type Accesories*/
+
+  const filterAccesories = () =>{
+    if(searchName === "" && productSearchType.value === "accesorios" && productSearchFrame.value === "cuadro" && productSearchWheels.value === "rodado"){
+      renderErrorProduct("");
+      renderToHtml(productFilterAccesories);
+      productSearchForm.reset();
+    }
+  }
+
+  filterAccesories();
 
 
   /*Search Filter Type*/
@@ -2211,7 +2280,7 @@ const countProductPrice = (price,countProduct) =>{
 const quantityTotalPrice = ()=>{
   shopBuy.classList.add("flex-on")
   const cardAmount=cardsShop.reduce((a,b)=>a + b.amount,0)
-  totalPrice.innerHTML = cardAmount
+  totalPrice.innerHTML = `$${formatNumb(cardAmount)}`
 }
 
 
@@ -2234,7 +2303,7 @@ const countProduct = e =>{
 }
 }
 
-const rederShop = ({id,img,name,price,amount}) =>{
+const rederShop = ({id,img,name,price}) =>{
   return `<div class="shop-card">
   <button type="button"class="btn-close align-self-end shop-card-close" aria-label="Close" data-id="${id}"></button>
   <img src="${img}" alt="imagen producto">
@@ -2244,7 +2313,7 @@ const rederShop = ({id,img,name,price,amount}) =>{
       <button type="button" class="btn btn-outline-dark"><small class="product-count">1</small></button>
       <button type="button" class="btn btn-outline-dark product-add">+</button>
   </div>
-  <h3 class="btn btn-outline-secondary btn-sm shop-card-price">Precio: <small>${price}</small></h3>
+  <h3 class="btn btn-outline-secondary btn-sm shop-card-price">Precio: $ <small>${formatNumb(price)}</small></h3>
 </div>`
 }
 

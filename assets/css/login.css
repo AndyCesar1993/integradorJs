@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 body{
     display: flex;
@@ -20,6 +21,10 @@ body{
     padding: 10px;
     gap: 10px;
     box-shadow: 1px 1px 40px -15px rgb(10, 9, 9);
+}
+.login h2{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
 }
 .login-close{
     color: #141515;
@@ -84,8 +89,10 @@ body{
 }
 .render-error{
     color: red;
-    font-size: 20px;
-    font-weight: lighter;
+    font-size: 25px;
+    font-weight: 400;
     max-width: 350px;
+    font-style: italic;
+    font-stretch: expanded;
     text-align: center;
 }

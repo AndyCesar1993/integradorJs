@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 body{
     display: flex;
@@ -20,6 +21,10 @@ body{
     gap: 10px;
     margin: 60px;
     box-shadow: 1px 1px 40px -15px rgb(10, 9, 9);
+}
+.register h2{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
 }
 .register-close{
     color: #141515;
@@ -79,8 +84,10 @@ body{
 .register-error{
     color: red;
     font-size: 25px;
-    font-weight: lighter;
+    font-weight: 400;
     max-width: 350px;
+    font-style: italic;
+    font-stretch: expanded;
     text-align: center;
 }
 .select-avatar{

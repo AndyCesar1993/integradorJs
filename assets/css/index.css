@@ -1,5 +1,5 @@
 :root {
-    --back-head: radial-gradient(circle, rgba(52,58,64,1) 51%, rgba(72,76,80,1) 70%, rgba(56,60,64,1) 100%);
+    --back-head: linear-gradient(90deg, rgba(52,58,64,0.9640231092436975) 34%, rgba(72,76,80,0.938813025210084) 64%, rgba(56,60,64,0.908000700280112) 100%);
     --dark: #000000;
     --gray:#C7C7C7;
     --text-gray:#909294;
@@ -9,10 +9,18 @@
     padding: 0 ;
     margin: 0;
     box-sizing: content-box;
+    font-family: 'Montserrat', sans-serif;
 }
 html{
     scroll-padding: 90px;
 }
+
+
+h1{
+    font-style: italic;
+    font-weight: 400;
+}
+
 
 /*Header*/
 
@@ -40,6 +48,11 @@ header{
     border-radius: 50%;
     padding: 15px;
     box-shadow: 2px 2px 30px 5px black;
+}
+.logo h3{
+    font-style: italic;
+    font-weight: 400;
+    font-size: 23px;
 }
 .logo img{
     width: 30px;
@@ -88,10 +101,9 @@ header nav ul li a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 150px;
 }
 .avatar-img{
-    width: 35px;
+    width: 20px;
 }
 .login-container i{
     display: flex;
@@ -207,12 +219,21 @@ header nav ul li a{
     padding: 15px;
     gap: 15px;
 }
-.product_card_info img{
+.img-product{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-product img{
     width: 300px;
     margin-left: auto;
     margin-right: auto;
 }
 .product_card_name{
+    font-style: italic;
+    font-weight:bolder;
     font-size: 25px;
 }
 .product_card_description{
@@ -225,7 +246,8 @@ header nav ul li a{
     font-size: 20px;
 }
 .product_card_description span{
-    font-weight: lighter;
+    font-weight: bold;
+    font-style: italic;
     margin-left: 7px;
 }
 .product_card_description p{
@@ -235,6 +257,29 @@ header nav ul li a{
 
 .products-vermas{
     justify-content: center;
+}
+.products-all{
+    display: none;
+    justify-content: center;
+}
+
+.loading{
+    display: none;
+    margin: auto;
+    margin-bottom: 30px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 22%, rgba(80,84,89,1) 51%, rgba(56,60,64,1) 72%);
+    animation: loading-animated 1s infinite linear
+}
+.loading-int{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #ffffff;
 }
 
 /*About Us*/
@@ -250,6 +295,8 @@ header nav ul li a{
     gap: 20px;
 }
 .about-us_info p{
+    font-weight: 400;
+    font-style:oblique;
     font-size: 20px;
     text-align: center;
 }
@@ -276,13 +323,15 @@ header nav ul li a{
 
 #contact{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: auto auto;
     grid-template-rows: 50% 20% 30%;
     padding: 15px;
     margin-bottom: 30px;
     gap: 15px;
 }
 #contact h2{
+    font-style: italic;
+    font-weight: 400;
     font-size: 20px;
 }
 .contact_contactanos{
@@ -325,7 +374,7 @@ header nav ul li a{
     place-content: center;
 }
 .map{
-    width: 350px;
+    width: 550px;
     height: 350px;
 }
 
@@ -451,8 +500,20 @@ footer p{
     }
 }
 
+@keyframes loading-animated {
+    0%, 15% {
+    transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /*Aux*/
 
 .flex-on{
     display: flex;
 }
+
+
+
