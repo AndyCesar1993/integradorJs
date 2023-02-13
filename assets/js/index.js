@@ -112,6 +112,7 @@ const init=()=>{
     window.addEventListener("click",addToShop);
     window.addEventListener("click",countProduct);
     window.addEventListener("click",removeToShop);
+    window.addEventListener("click",zoomImgCard);
 }
 
 init()

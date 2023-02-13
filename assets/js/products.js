@@ -19,6 +19,22 @@ const openMoreProduct=(e)=>{
   }
 }
 
+
+/*Zoom Card Img*/
+
+const zoomImgCard = e=>{
+  if(e.target.classList.contains("product-card-img")&&!e.target.classList.contains("zoom-in")){
+    e.target.classList.add("zoom-in");
+    backgroundFilter.classList.add("flex-on");
+    return
+  }if(e.target.classList.contains("product-card-img")&&e.target.classList.contains("zoom-in")){
+    e.target.classList.remove("zoom-in");
+    backgroundFilter.classList.remove("flex-on");
+  }
+}
+
+/*Class Products*/
+
 class productBikers{
     constructor(id,name,img,type,wheels,brand,frame,size,brake,vel,color,des,price,amount){
     this.id = id;
@@ -40,7 +56,7 @@ class productBikers{
 }
 
 const bikers =[
-    new productBikers(1,"Raleigh 700C Classic Nexus","./assets/img/productos/raleight 700c.png","Urbana",28,"raleigh","Aluminio","S","V-brake",3,"Negro",
+    new productBikers(1,"Raleigh 700C Classic Nexus","./assets/img/productos/raleight 700c.jpg","Urbana",28,"raleigh","Aluminio","S","V-brake",3,"Negro",
     "Bicicleta de paseo estilo vintage, liviana de aluminio con componentes modernos, al tener ruedas finas se convierte en una bicicleta ideal para paseos urbanos.",150000),
     
     new productBikers(16,"Trek Urbana Verve R700","./assets/img/productos/Trek Urbana Verve R700.jpg","Urbana",27.5,"Trek","Aluminio","S","Disco 160mm Mecanico",21,"Blanco",
@@ -138,7 +154,7 @@ const bikers =[
 const renderProductCard = ({id,img,name,wheels,brand,frame,size,brake,vel,color,des,price}) =>{
     return `<div class="product_card">
     <div class="product_card_info">
-        <div class="img-product"><img src="${img}" alt="img producto"></div>
+        <div class="img-product"><img class="product-card-img" src="${img}" alt="img producto"></div>
         <h2 class="product_card_name">${name}</h2>
         <input class="btn btn-outline-secondary product_card_more" type="button" value="Más">
         <h2 class="product_card_price">$ ${formatNumb(price)}</h2>
@@ -179,9 +195,17 @@ const renderCardsHtml =(arrays)=>{
     buttonVerTodos.style.display="flex";
   }else {
     buttonVerMas.style.display="flex"
-    buttonVerTodos.style.display="none";}
-  productContainer.innerHTML = arrays.slice(0,maxLengthRender).map((card)=>renderProductCard(card)).join("");
+    buttonVerTodos.style.display="none";
+  }
+  backgroundFilter.classList.add("flex-on");
+  loading.style.display="flex"
+    setTimeout(() => {
+        loading.style.display="none"
+        backgroundFilter.classList.remove("flex-on");
+        productContainer.innerHTML = arrays.slice(0,maxLengthRender).map((card)=>renderProductCard(card)).join("");
+    }, 1500);
 }
+
 
 const renderToHtml= (cards) =>{
   rendersCards = cards
@@ -193,19 +217,11 @@ const productsVerMas = (e)=>{
   if(e.target.classList.contains("products-vermas")){
     if(rendersCards.length > maxLengthRender && rendersCards.length >= maxLengthRender + 5){
       maxLengthRender = maxLengthRender + 5;
-      loading.style.display="flex"
-      setTimeout(() => {
-        loading.style.display="none"
-        renderCardsHtml(rendersCards)
-      }, 1500);
+      renderCardsHtml(rendersCards)
       return
     }if(rendersCards.length < maxLengthRender + 5){
       maxLengthRender = rendersCards.length;
-      loading.style.display="flex"
-      setTimeout(() => {
-        loading.style.display="none"
-        renderCardsHtml(rendersCards)
-      }, 1500);
+      renderCardsHtml(rendersCards)
       return
     }
   }
@@ -213,12 +229,8 @@ const productsVerMas = (e)=>{
 
 const allProducts = (e)=>{
   if(e.target.classList.contains("products-all")){
-    loading.style.display="flex"
-      setTimeout(() => {
-        loading.style.display="none"
-        renderCardsHtml(rendersCards)
+        renderCardsHtml(bikers)
         window.scroll(0, 600)
-      }, 1500);
   }else return
 }
 
@@ -2342,5 +2354,6 @@ const removeToShop = e=>{
     shopBuy.classList.remove("flex-on")
   }
 }
+
 
 
