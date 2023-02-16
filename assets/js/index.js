@@ -36,7 +36,7 @@ const menuToggle = (e) => {
     }if (e.target.classList.contains("nav-icon")){
         navMenu.classList.remove("flex-on");
         backgroundFilter.classList.remove("flex-on");
-    }if (e.target.classList.contains("background")){
+    }if (e.target.classList.contains("background")&& navMenu.classList.contains("flex-on")){
         navMenu.classList.remove("flex-on");
         backgroundFilter.classList.remove("flex-on");
     }
@@ -57,7 +57,7 @@ const openShop = (e)=>{
     }if (e.target.classList.contains("button-buy")){
         shop.classList.remove("flex-on");
         backgroundFilter.classList.remove("flex-on");
-    }if (e.target.classList.contains("background")){
+    }if (e.target.classList.contains("background")&&shop.classList.contains("flex-on")){
         shop.classList.remove("flex-on");
         backgroundFilter.classList.remove("flex-on");
     }

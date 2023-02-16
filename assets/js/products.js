@@ -35,6 +35,12 @@ const zoomImgCard = e=>{
 
 /*Class Products*/
 
+
+let cards= JSON.parse(localStorage.getItem("bikers"));
+const saveBikersLocalStorage =(bikers)=>{
+    localStorage.setItem("bikers",JSON.stringify(bikers));
+}
+
 class productBikers{
     constructor(id,name,img,type,wheels,brand,frame,size,brake,vel,color,des,price,amount){
     this.id = id;
@@ -79,7 +85,6 @@ const bikers =[
     
     new productBikers(5,"Fire Bird HE- 2021 Dama","./assets/img/productos/FIRE BIRD HE- 2021 DAMA.jpeg","MTB",26,"fire bird","Aluminio","S","V-Brake",21,"Negro y Rosa",
     "Bicicleta MTB de dama, posee cuadro de aluminio, lo que la hace ideal para uso diario y deportivo.",90000),
-    
     
     new productBikers(6,"Zenith Atacama","./assets/img/productos/ZENITH ATACAMA.jpg","MTB",26,"zenith","Aluminio","L","Disco 160mm Mecanico",8,"Negro y Rojo",
     "Bicicleta MTB rodado 26, es muy liviana al tener cuadro de aluminio, posee componentes Shimano lo que la convierte en una bicicleta ideal tanto para uso deportivo urbano como para uso rural o de montaña.",130000),
@@ -147,6 +152,7 @@ const bikers =[
 
 
 
+saveBikersLocalStorage(bikers)
 
 /* Render Products*/
 

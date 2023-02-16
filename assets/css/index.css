@@ -388,6 +388,15 @@ header nav ul li a:hover,
     width: 550px;
     height: 350px;
 }
+.Redirect-WhatsApp{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+.Redirect-WhatsApp img{
+    width: 80px;
+    cursor: pointer;
+}
 
 /*Shop*/
 

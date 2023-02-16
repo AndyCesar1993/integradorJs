@@ -240,6 +240,14 @@
         width: 300px;
     }
 
+    .Redirect-WhatsApp{
+        bottom: 20px;
+        right: 20px;
+    }
+    .Redirect-WhatsApp img{
+        width: 60px;
+    }
+
     /*hero*/
     
     #hero{
@@ -302,5 +310,6 @@
     .shop-card{
         display: flex;
     }
+
 }
 
