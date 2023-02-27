@@ -275,8 +275,8 @@ header nav ul li a:hover,
     margin: auto;
     z-index: 1;
     position: fixed;
-    top: 50%;
-    right: 50%;
+    top: calc(50% - 45px);
+    right: calc(50% - 45px);
     margin-bottom: 30px;
     width: 70px;
     height: 70px;
